@@ -6,12 +6,13 @@ def palindrom(word):
         Arguments:
         word     
     """
-    for i in range(len(word)):       
-        if word[i] == word[- i - 1] and i + 1 < len(word):           
-            continue
-        elif word[i] == word[- i - 1] and i + 1 == len(word):                    
-            return True
-        else:                      
-            return False
-
-print(palindrom("kajak"))
+    my_list = []
+    for i in range(len(word)):              
+        if word[i].isalpha() == True or word[i].isnumeric() == True:
+            my_list.append(word[i].upper())     
+    if my_list == my_list[::-1]:  
+        return True 
+    else:
+        return False          
+    
+print(palindrom("Ile Roman ładny dyndał na moreli"))
